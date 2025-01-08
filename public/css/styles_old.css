@@ -1,0 +1,141 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fbfbfb;
+    color: #000000;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Memastikan logo dan login berada di ujung */
+    background-color: #33b0c9;
+    padding: 10px 20px;
+    box-shadow: 0 2px 4px rgba(11, 0, 0, 0.1);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 55px; /* Ukuran logo yang lebih kecil */
+    margin-right: 15px; /* Spasi antara logo dan teks */
+}
+
+.logo-text p {
+    margin: 1px 0 0; /* Mengatur margin atas menjadi kecil untuk mengurangi jarak antara h4 dan p */
+    font-size: 14px;
+    color: #ffffff;
+}
+nav {
+    flex: 1; /* Memungkinkan nav untuk mengambil ruang yang tersisa di tengah */
+    display: flex;
+    justify-content: center; /* Menempatkan navigasi di tengah */
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 15px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fafffa;
+    font-size: 16px;
+}
+
+nav a:hover {
+    text-decoration: underline; /* Menambahkan efek saat hover */
+}
+
+.login {
+    margin-left: auto; /* Menempatkan tombol login di kanan */
+}
+
+.login button {
+    background-color: #436d8f;
+    color: #ffffff;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.login button:hover {
+    background-color: #2ba0ce;
+}
+
+.info-section {
+    padding: 20px;
+}
+
+.container {
+    width: 90%;
+    margin: 20px auto;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Menyesuaikan kolom secara otomatis */
+    gap: 20px;
+}
+
+.card {
+    background-color: #aedff4;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.2s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* Ukuran tetap menggunakan rem untuk konsistensi */
+    max-width: 100%; /* Memastikan kartu tidak melampaui lebar kontainer */
+    height: auto; /* Menjaga tinggi sesuai konten */
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card-image {
+    aspect-ratio: 1 / 1;
+    background-size: cover;
+    background-position: center;
+    height: 200px;
+    background-color: #f0f0f0;
+}
+
+.card h2 {
+    margin: 15px 0 5px;
+    color: #176d2f;
+    font-size: 1.125rem; /* Ukuran font relatif */
+}
+
+.card p {
+    margin: 0 0 15px;
+    font-size: 0.875rem; /* Ukuran font relatif */
+    color: #666;
+}
+
+/* Individual card images */
+#fitb { background-image: url('https://mastumapel.com/wp-content/uploads/2023/10/BWS-Bojonegoro-750x375.jpg'); background-color: #32CD32; }
+#fmipa { background-image: url('fmipa-image.png'); background-color: #FFD700; }
+#sappk { background-image: url('sappk-image.png'); background-color: #FF6347; }
+#stei { background-image: url('stei-image.png'); background-color: #4682B4; }
+#sbm { background-image: url('sbm-image.png'); background-color: #F4A460; }
+#fsrd { background-image: url('fsrd-image.png'); background-color: #FF4500; }
+#fttm { background-image: url('fttm-image.png'); background-color: #FF8C00; }
+#sf { background-image: url('sf-image.png'); background-color: #98FB98; }
+#sith { background-image: url('sith-image.png'); background-color: #90EE90; }
+#fti { background-image: url('fti-image.png'); background-color: #D3D3D3; }
+#ftmd { background-image: url('ftmd-image.png'); background-color: #87CEEB; }
+#ftsl { background-image: url('ftsl-image.png'); background-color: #4682B4; }

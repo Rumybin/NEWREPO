@@ -1,0 +1,85 @@
+/* lelembut.css */
+
+/* General Page Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    text-align: center; /* Pastikan semua teks ter-align ke tengah */
+}
+
+/* Header Styling */
+.header {
+    background-color: #8B0000; /* Dark red */
+    color: white;
+    padding: 20px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.header h1 {
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+/* Main Content Styling */
+.main-content {
+    margin-top: 50px;
+}
+
+/* Team Lelembut Title */
+.main-content h2 {
+    font-family: 'Times New Roman', Times, serif;
+    color: #333;
+    font-size: 4rem;
+    margin-top: 50px;
+}
+
+/* About Lelembut */
+.main-content h3 {
+    font-size: 2.5rem;
+    color: #555;
+    margin-top: 30px;
+}
+
+/* Paragraph Styling */
+.main-content p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #666;
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+/* Scroll Animation Styling */
+.scroll-animation {
+    opacity: 0; /* Mulai dalam keadaan tidak terlihat */
+    transform: translateY(50px); /* Geser sedikit ke bawah */
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out; /* Kurangi durasi animasi */
+}
+
+.scroll-active {
+    opacity: 1; /* Ketika scroll terjadi, muncul sepenuhnya */
+    transform: translateY(0); /* Kembali ke posisi aslinya */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header h1 {
+        font-size: 2.5rem;
+    }
+
+    .main-content h2 {
+        font-size: 3rem;
+    }
+
+    .main-content h3 {
+        font-size: 2rem;
+    }
+
+    .main-content p {
+        font-size: 1rem;
+        padding: 0 10px;
+    }
+}

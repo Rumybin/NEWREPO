@@ -1,0 +1,116 @@
+/* Buat halaman memiliki tampilan lebih modern dan animasi */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f4f8;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    position: relative; /* Untuk posisi tombol Back */
+}
+
+/* Tombol Back di pojok kiri atas */
+.back-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 16px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+/* Hover effect untuk tombol Back */
+.back-button:hover {
+    background-color: #0056b3;
+    text-decoration: none;
+}
+
+/* Responsif, agar tombol tidak terlalu besar di layar kecil */
+@media (max-width: 600px) {
+    .back-button {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+}
+
+/* Atur box di tengah halaman */
+.ekstra-hari-ini {
+    text-align: center;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 600px;
+    width: 100%;
+    animation: fadeInUp 1s ease-out;
+}
+
+/* Judul dengan gaya yang lebih besar */
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #007bff;
+}
+
+/* Efek fade-in dari bawah */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Styling untuk list program */
+.program-loop-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+/* Styling untuk program */
+.program-loop {
+    background-color: #e0f7fa;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+/* Pusatkan program pertama di tengah container dengan lebar 100px */
+.program-loop-container .program-loop:first-child {
+    grid-column: span 2; /* Masih mengambil 2 kolom */
+    justify-self: center;
+    align-self: center;
+    background-color: #b2ebf2;
+    width: 400px; /* Tetapkan lebar menjadi 100px */
+    padding: 10px;
+    margin: 0 auto; /* Untuk memastikan elemen di tengah */
+    text-align: center; /* Agar teks tetap di tengah elemen */
+    box-sizing: border-box; /* Pastikan padding tidak melebihi lebar */
+}
+
+
+/* Program hover effect */
+.program-loop:hover {
+    transform: scale(1.05);
+    background-color: #b2ebf2;
+}
+
+/* Kotak di bawah program untuk informasi tambahan */
+.center-box {
+    margin-top: 30px;
+    font-size: 1.5rem;
+    color: #555;
+}

@@ -1,0 +1,318 @@
+/* Reset Default Margin dan Padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* header */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Memastikan logo dan login berada di ujung */
+    background-color: #1E201E ;
+    padding: 10px 20px;
+    box-shadow: 0 2px 4px rgba(11, 0, 0, 0.1);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 55px; /* Ukuran logo yang lebih kecil */
+    margin-right: 15px; /* Spasi antara logo dan teks */
+}
+
+.logo-text p {
+    margin: 1px 0 0; /* Mengatur margin atas menjadi kecil untuk mengurangi jarak antara h4 dan p */
+    font-size: 14px;
+    color: #ffffff;
+}
+
+nav {
+    flex: 1; /* Memungkinkan nav untuk mengambil ruang yang tersisa di tengah */
+    display: flex;
+    justify-content: center; /* Menempatkan navigasi di tengah */
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 15px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fafffa;
+    font-size: 16px;
+}
+
+nav a:hover {
+    text-decoration: underline; /* Menambahkan efek saat hover */
+}
+
+.login {
+    margin-left: auto; /* Menempatkan tombol login di kanan */
+}
+
+.login button {
+    background-color: #347481;
+    color: #ffffff;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.login button:hover {
+    background-color: #376771;
+}
+
+
+
+/* Gaya Konten Utama */
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    background: #3C3D37 ;
+    color: #697565 ;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-content {
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Container untuk Large-Box dan Slideshow */
+.container {
+    max-width: 1450px;
+    margin: 0 auto; /* Mengatur margin luar untuk posisinya di tengah */
+    padding: 40px; /* Menambahkan jarak 20px di semua sisi dalam container */
+    background-color: #1A1A19;
+    border-radius: 20px;
+    position: relative;
+}
+
+/* Slideshow */
+.slideshow-container {
+    position: relative;
+    width: 100%;
+    max-width: 1452px;
+    height: 0;
+    padding-top: 41.32%;
+    overflow: hidden;
+    border-radius: 30px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+
+.slideshow-container img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.mySlides {
+    display: none;
+}
+
+.fade {
+    animation-name: fade;
+    animation-duration: 0.5s;
+}
+
+@keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+}
+
+/* Indikator Titik */
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+    background-color: #717171;
+}
+
+/* Gaya Kotak Besar */
+.large-box {
+    width: 100%;
+    max-width: 12000px;
+    height: 300px;
+    overflow: hidden;
+    position: relative;
+    border-radius: 30px;
+    margin-bottom: 40px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.large-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.large-box:hover {
+    transform: scale(1.009);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Gaya Kotak Kecil */
+.small-box-container {
+    display: flex;
+    gap: 30px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.small-box {
+    width: calc(50% - 5px);
+    height: 300px;
+    position: relative; /* Untuk memungkinkan teks overlay berada di atas gambar */
+    overflow: hidden;
+    background-color: #f0f0f0;
+    margin-bottom: 10px;
+    border-radius: 30px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.small-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 30px; /* Membuat gambar mengikuti bentuk sudut kotak */
+}
+
+.small-box:hover {
+    transform: scale(1.009);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Overlay text versi lebih kecil */
+.overlay-text-small {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 40px; /* Versi lebih kecil dari overlay text besar */
+    font-weight: bold;
+    text-transform: uppercase;
+    pointer-events: none;
+    -webkit-text-stroke: 1px black; /* Versi lebih kecil dari stroke teks */
+}
+
+/* Efek Hover untuk Kotak */
+.box:hover {
+    background-color: #ddd;
+}
+
+/* Teks Overlay untuk Kotak Besar */
+.overlay-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 80px;
+    font-weight: bold;
+    text-transform: uppercase;
+    pointer-events: none;
+    -webkit-text-stroke: 2px black;
+}
+
+/* Footer */
+/* Footer */
+footer {
+    background-color: #1E201E ;
+    border-radius: 0 0 30px 30px;
+    padding: 40px 20px;
+    text-align: center;
+    margin-top: 40px;
+    height: auto;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+
+.footer-content .logo img {
+    width: 100px; /* Ukuran logo Pondok */
+}
+
+.social-icons {
+    display: flex;
+    gap: 20px; /* Jarak antar ikon */
+}
+
+.social-icons a img {
+    width: 40px; /* Menetapkan lebar untuk menjaga proporsi gambar */
+    height: auto; /* Biarkan tinggi menyesuaikan secara otomatis agar gambar tidak gepeng */
+    transition: transform 0.3s ease; /* Efek transisi saat hover */
+    object-fit: contain; /* Memastikan gambar tetap proporsional */
+}
+
+.social-icons a img:hover {
+    transform: scale(1.2); /* Perbesar ikon saat di-hover */
+}
+
+.footer-bottom {
+    margin-top: 20px;
+}
+
+.footer-bottom p {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 16px;
+}
+
+/* Styling Responsif */
+@media only screen and (max-width: 600px) {
+    header {
+        font-size: 18px;
+    }
+
+    .slideshow-container {
+        width: 100%;
+    }
+
+    .box-container {
+        flex-direction: column;
+    }
+
+    .small-box {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    .button-container {
+        display: block;
+    }
+
+    .rounded-button {
+        display: block;
+        margin: 10px auto;
+    }
+}

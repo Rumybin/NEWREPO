@@ -1,0 +1,144 @@
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%; /* Memastikan body memenuhi tinggi layar */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #641111;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Memastikan tinggi minimal body setara dengan viewport */
+}
+
+main {
+    flex: 1; /* Membuat konten utama mengambil sisa ruang di antara header dan footer */
+}
+
+/* Tombol di atas */
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.button-container a {
+    text-decoration: none;
+    padding: 10px 20px;
+    background-color: #003366;
+    color: white;
+    border-radius: 20px;
+    margin: 0 10px;
+    font-size: 16px;
+}
+
+.button-container a:hover {
+    background-color: #005399;
+}
+
+/* Tombol Back */
+.back-button {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    text-decoration: none;
+    padding: 10px 15px;
+    background-color: #003366;
+    color: white;
+    border-radius: 20px;
+}
+
+.back-button:hover {
+    background-color: #005399;
+}
+
+/* Program container using CSS grid */
+.program-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 10px; /* Jarak antar kotak */
+    justify-content: center; /* Menempatkan konten di tengah */
+    background-color: #ffffff; /* Warna biru muda */
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 1200px;
+    margin: 20px auto; /* Menempatkan di tengah halaman */
+}
+
+/* Program container using CSS grid */
+.outer-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 10px; /* Jarak antar kotak */
+    justify-content: center; /* Menempatkan konten di tengah */
+    background-color: #ce3203; /* Warna biru muda */
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 1200px;
+    margin: 20px auto; /* Menempatkan di tengah halaman */
+}
+
+/* Each program box (kotak) */
+.program-box {
+    background-color: white;
+    padding: 1.5rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    min-width: 300px; /* Menetapkan lebar minimal */
+}
+
+/* Styling untuk judul kotak */
+.program-box h3 {
+    font-size: 1.5rem;
+    color: #003366;
+    margin-bottom: 1rem;
+}
+
+/* Footer Sticky */
+footer {
+    background-color: white;
+    border-radius: 0 0 30px 30px;
+    padding: 40px 20px;
+    text-align: center;
+    margin-top: auto; /* Membuat footer selalu berada di bawah */
+    height: 300px;
+}
+
+/* Footer content */
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+
+.footer-content .logo img {
+    width: 100px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 20px;
+}
+
+.social-icons img {
+    width: 30px;
+    height: 30px;
+}
+
+.footer-bottom {
+    margin-top: 20px;
+}
+
+.footer-bottom p {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 16px;
+}
