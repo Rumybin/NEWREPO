@@ -98,6 +98,11 @@
     Login
   </a>
 </li>
+<li class="nav-item">
+  <a class="nav-link text-white bg-green px-3" href="controlsiswa" aria-label="A system message page">
+    Daftar yuk
+  </a>
+</li>
 </ul>
 
 </div>

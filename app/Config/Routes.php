@@ -17,6 +17,7 @@ $routes->get('/lanjutan', 'controladmin::index'); // Route untuk halaman berikut
 $routes->get('/login/resetLock', 'Login::resetLock');
 $routes->get('/regis', 'controlregis::index');
 
+// form
 $routes->get('controlsiswa', 'Controlsiswa::index'); // Untuk menampilkan form
 $routes->post('controlsiswa/save', 'Controlsiswa::save'); // Untuk menyimpan data
 

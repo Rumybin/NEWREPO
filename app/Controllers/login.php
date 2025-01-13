@@ -55,7 +55,7 @@ class Login extends Controller
             $session->remove(['login_attempts', 'locked']);
 
             // Redirect ke halaman berikutnya
-            return redirect()->to('/lanjutan');
+            return redirect()->to('/admin/siswa');
         } else {
             // Hitung percobaan login gagal
             $attempts = $session->get('login_attempts') ?? 0;
