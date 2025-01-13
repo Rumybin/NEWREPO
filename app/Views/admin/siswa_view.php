@@ -8,6 +8,7 @@
     <!-- AdminLTE CSS -->
     <link rel="stylesheet" href="<?= base_url('adminlte/plugins/fontawesome-free/css/all.min.css'); ?>">
     <link rel="stylesheet" href="<?= base_url('adminlte/dist/css/adminlte.min.css'); ?>">
+    <link rel="stylesheet" href="<?= base_url('adminlte/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css'); ?>">
 </head>
 <body class="hold-transition sidebar-mini">
     <div class="wrapper">
@@ -57,6 +58,7 @@
                     <div class="card">
                         <div class="card-header">
                             <h3 class="card-title">Tabel Data Siswa</h3>
+                            <button class="btn btn-primary btn-sm float-right" data-toggle="modal" data-target="#addModal">Tambah Data</button>
                         </div>
                         <div class="card-body">
                             <table id="example1" class="table table-bordered table-striped">
@@ -66,6 +68,7 @@
                                         <th>Nama Lengkap</th>
                                         <th>Kelas</th>
                                         <th>Ekstrakurikuler</th>
+                                        <th>Aksi</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -75,7 +78,45 @@
                                         <td><?= $row['nama_lengkap']; ?></td>
                                         <td><?= $row['kelas']; ?></td>
                                         <td><?= $row['ekstra']; ?></td>
+                                        <td>
+                                            <button class="btn btn-warning btn-sm" data-toggle="modal" data-target="#editModal<?= $row['id']; ?>">Edit</button>
+                                            <a href="<?= base_url('admin/siswa/delete/' . $row['id']); ?>" class="btn btn-danger btn-sm" onclick="return confirm('Hapus data ini?')">Hapus</a>
+                                        </td>
                                     </tr>
+
+                                    <!-- Edit Modal -->
+                                    <div class="modal fade" id="editModal<?= $row['id']; ?>" tabindex="-1">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <form method="POST" action="<?= base_url('admin/siswa/update/' . $row['id']); ?>">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title">Edit Data Siswa</h5>
+                                                        <button type="button" class="close" data-dismiss="modal">
+                                                            <span>&times;</span>
+                                                        </button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <div class="form-group">
+                                                            <label for="nama_lengkap">Nama Lengkap</label>
+                                                            <input type="text" class="form-control" id="nama_lengkap" name="nama_lengkap" value="<?= $row['nama_lengkap']; ?>" required>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="kelas">Kelas</label>
+                                                            <input type="text" class="form-control" id="kelas" name="kelas" value="<?= $row['kelas']; ?>" required>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="ekstra">Ekstrakurikuler</label>
+                                                            <input type="text" class="form-control" id="ekstra" name="ekstra" value="<?= $row['ekstra']; ?>" required>
+                                                        </div>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+                                                        <button type="submit" class="btn btn-success">Simpan</button>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
                                     <?php endforeach; ?>
                                 </tbody>
                             </table>
@@ -86,10 +127,51 @@
         </div>
     </div>
 
-    <!-- AdminLTE Scripts -->
+    <!-- Add Modal -->
+    <div class="modal fade" id="addModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form method="POST" action="<?= base_url('admin/siswa/save'); ?>">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Tambah Data Siswa</h5>
+                        <button type="button" class="close" data-dismiss="modal">
+                            <span>&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="nama_lengkap">Nama Lengkap</label>
+                            <input type="text" class="form-control" id="nama_lengkap" name="nama_lengkap" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="kelas">Kelas</label>
+                            <input type="text" class="form-control" id="kelas" name="kelas" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="ekstra">Ekstrakurikuler</label>
+                            <input type="text" class="form-control" id="ekstra" name="ekstra" required>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+                        <button type="submit" class="btn btn-primary">Tambah</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 
+    <!-- AdminLTE Scripts -->
     <script src="<?= base_url('adminlte/plugins/jquery/jquery.min.js'); ?>"></script>
     <script src="<?= base_url('adminlte/plugins/bootstrap/js/bootstrap.bundle.min.js'); ?>"></script>
     <script src="<?= base_url('adminlte/dist/js/adminlte.min.js'); ?>"></script>
+    <script src="<?= base_url('adminlte/plugins/datatables/jquery.dataTables.min.js'); ?>"></script>
+    <script src="<?= base_url('adminlte/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js'); ?>"></script>
+
+    <script>
+        $(document).ready(function() {
+            $('#example1').DataTable();
+        });
+    </script>
 </body>
 </html>

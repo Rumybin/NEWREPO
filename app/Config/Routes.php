@@ -20,8 +20,11 @@ $routes->get('/regis', 'controlregis::index');
 $routes->get('controlsiswa', 'Controlsiswa::index'); // Untuk menampilkan form
 $routes->post('controlsiswa/save', 'Controlsiswa::save'); // Untuk menyimpan data
 
-// routes.php
+// admin
 $routes->get('/admin/siswa', 'AdminSiswaController::index');
+$routes->post('/admin/siswa/save', 'AdminSiswaController::save'); // Menambah data
+$routes->post('/admin/siswa/update/(:num)', 'AdminSiswaController::update/$1'); // Mengupdate data berdasarkan ID
+$routes->get('/admin/siswa/delete/(:num)', 'AdminSiswaController::delete/$1'); // Menghapus data berdasarkan ID
 
 
 
