@@ -13,8 +13,13 @@ $routes->get('/sport', 'controlsport::index');
 
 $routes->get('/login', 'Login::index');
 $routes->post('/login/authenticate', 'Login::authenticate');
-$routes->get('/lanjutan', 'contrololim::index'); // Route untuk halaman berikutnya
+$routes->get('/lanjutan', 'controladmin::index'); // Route untuk halaman berikutnya
 $routes->get('/login/resetLock', 'Login::resetLock');
+$routes->get('/regis', 'controlregis::index');
+
+$routes->get('controlsiswa', 'Controlsiswa::index'); // Untuk menampilkan form
+$routes->post('controlsiswa/save', 'Controlsiswa::save'); // Untuk menyimpan data
+
 
 
 

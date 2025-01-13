@@ -69,6 +69,26 @@ class Database extends Config
         'failover' => [],
         'port'     => 3306,
     ];
+
+    public $thirdDB = [
+        'DSN'      => '',
+        'hostname' => 'localhost',    // Host database
+        'username' => 'root',         // Username MySQL Anda
+        'password' => '',             // Password MySQL Anda
+        'database' => 'tugas',        // Nama database yang berisi tabel `penjaga`
+        'DBDriver' => 'MySQLi',       // Driver database
+        'DBPrefix' => '',
+        'pConnect' => false,
+        'DBDebug'  => true,
+        'charset'  => 'utf8mb4',
+        'DBCollat' => 'utf8mb4_general_ci',
+        'swapPre'  => '',
+        'encrypt'  => false,
+        'compress' => false,
+        'strictOn' => false,
+        'failover' => [],
+        'port'     => 3306,
+    ];
     
     
     
