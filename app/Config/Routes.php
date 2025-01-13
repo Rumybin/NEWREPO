@@ -20,6 +20,9 @@ $routes->get('/regis', 'controlregis::index');
 $routes->get('controlsiswa', 'Controlsiswa::index'); // Untuk menampilkan form
 $routes->post('controlsiswa/save', 'Controlsiswa::save'); // Untuk menyimpan data
 
+// routes.php
+$routes->get('/admin/siswa', 'AdminSiswaController::index');
+
 
 
 
