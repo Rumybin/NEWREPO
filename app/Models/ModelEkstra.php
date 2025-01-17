@@ -8,14 +8,11 @@ class ModelEkstra extends Model
 {
     protected $table = 'db_ekstra';
     protected $primaryKey = 'kode';
-    protected $allowedFields = ['Nama', 'Hari', 'type', 'des', 'gambar', 'quotes'];
+    protected $allowedFields = ['Nama', 'Hari', 'type', 'des', 'gambar', 'land', 'quotes'];
 
     public function getEkstraByDay($hari)
     {
-        // Menggunakan select untuk memilih kolom yang diinginkan
-        return $this->select('Nama, gambar') // Pastikan 'gambar' dipilih
-            ->where('Hari', $hari)
-            ->findAll();
+        return $this->select('Nama, gambar, land')->where('Hari', $hari)->findAll();
     }
 
     public function getAllNama()
@@ -25,9 +22,11 @@ class ModelEkstra extends Model
 
     public function getEkstraByType($type)
     {
-        // Ambil kolom yang diperlukan
-        return $this->select('Nama, des, gambar, quotes') // Sesuaikan kolom
-            ->where('type', $type)
-            ->findAll();
+        return $this->select('Nama, des, gambar, land, quotes')->where('type', $type)->findAll();
+    }
+
+    public function getEkstraByName($nama)
+    {
+        return $this->where('Nama', $nama)->first();
     }
 }

@@ -7,6 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Form Pendaftaran">
     <meta name="author" content="Your Name">
+    <link rel="icon" type="image/png" sizes="32x32" href="<?= base_url('images/logo/logopondok.png'); ?>">
+    <link rel="icon" type="image/png" sizes="16x16" href="<?= base_url('images/logo/logopondok.png'); ?>">
+    <link rel="icon" type="image/png" sizes="96x96" href="<?= base_url('images/logo/logopondok.png'); ?>">
+
     <meta name="keywords" content="Form, Pendaftaran, HTML, CSS">
 
     <!-- Title Page-->
@@ -66,10 +70,22 @@
                                     <option disabled selected>Pilih Kelas</option>
                                     <option value="7-A">7-A</option>
                                     <option value="7-B">7-B</option>
+                                    <option value="7-C">7-C</option>
                                     <option value="8-A">8-A</option>
                                     <option value="8-B">8-B</option>
+                                    <option value="8-C">8-C</option>
                                     <option value="9-A">9-A</option>
                                     <option value="9-B">9-B</option>
+                                    <option value="9-C">9-C</option>
+                                    <option value="10-A">10-A</option>
+                                    <option value="10-B">10-B</option>
+                                    <option value="10-C">10-C</option>
+                                    <option value="11-A">11-A</option>
+                                    <option value="11-B">11-B</option>
+                                    <option value="11-C">11-C</option>
+                                    <option value="12-A">12-A</option>
+                                    <option value="12-B">12-B</option>
+                                    <option value="12-C">12-C</option>
                                 </select>
                                 <div class="select-dropdown"></div>
                             </div>

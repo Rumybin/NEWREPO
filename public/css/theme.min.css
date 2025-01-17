@@ -406,7 +406,8 @@
   }
   
   .offset-1 {
-      margin-left: 8.33333%
+      margin-left:0%;
+      margin-right:70%;
   }
   
   .g-5,.gx-5 {
@@ -1197,6 +1198,10 @@
   .mb-5 {
       margin-bottom: 3rem!important
   }
+
+  .mb-6 {
+    margin-bottom: 4rem!important
+}
   
   .mb-auto {
       margin-bottom: auto!important

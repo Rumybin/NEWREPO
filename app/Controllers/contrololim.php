@@ -16,12 +16,15 @@ class contrololim extends Controller
     }
 
     public function index()
-    {
-        // Ambil data dengan type 'olim' dan kolom yang diperlukan
-        $data['ekstra_olim'] = $this->model->getEkstraByType('olim');
+{
+    // Ambil data dengan type 'olim' dan kolom yang diperlukan
+    $data['ekstra_olim'] = $this->model->select('nama, des, gambar')
+                                        ->where('type', 'olim')
+                                        ->findAll();
 
-        // Kirim data ke view 'olympiad'
-        return view('olympiad', $data);
-    }
+    // Kirim data ke view 'olympiad'
+    return view('olympiad', $data);
+}
+
 
 }

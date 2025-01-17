@@ -21,22 +21,29 @@ $routes->get('/regis', 'controlregis::index');
 $routes->get('controlsiswa', 'Controlsiswa::index'); // Untuk menampilkan form
 $routes->post('controlsiswa/save', 'Controlsiswa::save'); // Untuk menyimpan data
 
-// admin
+// Routes untuk siswa
 $routes->get('/admin/siswa', 'AdminSiswaController::index');
-$routes->post('/admin/siswa/save', 'AdminSiswaController::save'); // Menambah data
-$routes->post('/admin/siswa/update/(:num)', 'AdminSiswaController::update/$1'); // Mengupdate data berdasarkan ID
-$routes->get('/admin/siswa/delete/(:num)', 'AdminSiswaController::delete/$1'); // Menghapus data berdasarkan ID
+$routes->post('/admin/siswa/save', 'AdminSiswaController::save');
+$routes->post('/admin/siswa/update/(:num)', 'AdminSiswaController::update/$1');
+$routes->get('/admin/siswa/delete/(:num)', 'AdminSiswaController::delete/$1');
 
+// Routes untuk ekstra
+$routes->get('/admin/ekstra', 'AdminekstraController::index');
+$routes->post('/admin/ekstra/save', 'AdminSiswaController::saveEkstra');
+$routes->post('/admin/ekstra/update/(:num)', 'AdminSiswaController::updateEkstra/$1');
+$routes->get('/admin/ekstra/delete/(:num)', 'AdminSiswaController::deleteEkstra/$1');
 
+$routes->get('admin/siswa/print', 'AdminSiswaController::print');
+$routes->get('/admin/ekstra/print', 'AdminekstraController::printEkstra');
 
 
 $routes->get('/diniyah', 'controldiniyah::index');
 $routes->get('/olim/lelembut', 'Contrololim::lelembut');
 $routes->get('/jadwal', 'controljadwal::index');
-$routes->get('/halaman(:any)', 'controlhalaman::index/$1');
+$routes->get('/halaman/(:any)', 'controlhalaman::index/$1');
 $routes->get('/cacat', 'controlcacat::index');
 
-
-
-// $routes->get('/ekstrakurikuler', 'EkstrakurikulerController::index');
-// $routes->get('/ekstrakurikuler', 'EkstrakurikulerController::Namahari');
+// Tambahkan route untuk halaman error
+$routes->get('/error-page', function () {
+    return view('errors/custom_error');
+});

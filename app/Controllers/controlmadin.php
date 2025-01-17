@@ -16,12 +16,15 @@ class controlmadin extends Controller
     }
 
     public function index()
-    {
-        // Ambil data dengan type 'olim' dan kolom yang diperlukan
-        $data['ekstra_madin'] = $this->model->getEkstraByType('madin');
+{
+    // Ambil data dengan type 'olim' dan kolom yang diperlukan
+    $data['ekstra_madin'] = $this->model->select('nama, des, gambar')
+                                        ->where('type', 'madin')
+                                        ->findAll();
 
-        // Kirim data ke view 'olympiad'
-        return view('madin', $data);
-    }
+    // Kirim data ke view 'olympiad'
+    return view('madin', $data);
+}
+
 
 }

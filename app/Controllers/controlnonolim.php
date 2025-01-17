@@ -16,12 +16,15 @@ class controlnonolim extends Controller
     }
 
     public function index()
-    {
-        // Ambil data dengan type 'olim' dan kolom yang diperlukan
-        $data['ekstra_nonolim'] = $this->model->getEkstraByType('nonolim');
+{
+    // Ambil data dengan type 'olim' dan kolom yang diperlukan
+    $data['ekstra_nonolim'] = $this->model->select('nama, des, gambar')
+                                        ->where('type', 'nonolim')
+                                        ->findAll();
 
-        // Kirim data ke view 'olympiad'
-        return view('nonolim', $data);
-    }
+    // Kirim data ke view 'olympiad'
+    return view('nonolim', $data);
+}
+
 
 }

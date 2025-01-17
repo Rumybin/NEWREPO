@@ -11,20 +11,22 @@ class controlhalaman extends Controller
 
     public function __construct()
     {
-        // Inisialisasi model ModelEkstra
         $this->model = new ModelEkstra();
     }
 
     public function index($nama)
     {
-        // Ambil data berdasarkan nama
-        $data['ekstra'] = $this->model->where('Nama', $nama)->first();
+        // Ambil data ekstra berdasarkan nama
+        $data['ekstra'] = $this->model->getEkstraByName($nama);
 
-        // Periksa apakah data ditemukan
-        if ($data['ekstra'] === null) {
-            // Jika tidak ditemukan, tampilkan pesan kesalahan atau redirect
+        // Jika data tidak ditemukan, arahkan ke halaman error
+        if (!$data['ekstra']) {
             return redirect()->to('/error-page');
         }
+
+        // Tambahkan URL penuh untuk gambar
+        $data['ekstra']['gambar_url'] = base_url('uploads/ekstrakurikuler/' . $data['ekstra']['gambar']);
+        $data['ekstra']['land_url'] = base_url('uploads/landscape/' . $data['ekstra']['land']);
 
         // Kirim data ke view 'halaman'
         return view('halaman', $data);
